@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successful Future Trading - Transform Your Financial Future</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b69 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff10" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-10px, -10px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .main-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #fff, #00d4ff, #ff6b35);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        .pain-points {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .pain-points h3 {
+            color: #ff6b35;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .pain-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .pain-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .pain-item::before {
+            content: '❌';
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .solution {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 107, 53, 0.1));
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .solution h3 {
+            color: #00d4ff;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+        }
+
+        .benefit-card::before {
+            content: '✅';
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .benefit-card h4 {
+            color: #00d4ff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .cta-section {
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: linear-gradient(45deg, rgba(255, 107, 53, 0.15), rgba(0, 212, 255, 0.15));
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 107, 53, 0.1), transparent, rgba(0, 212, 255, 0.1));
+            animation: rotate 8s linear infinite;
+            z-index: 1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        .urgency {
+            background: linear-gradient(45deg, #ff1744, #ff6b35);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            animation: urgencyPulse 1.5s infinite;
+            box-shadow: 0 4px 20px rgba(255, 23, 68, 0.4);
+        }
+
+        @keyframes urgencyPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            min-width: 280px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ff1744, #ff6b35);
+            color: white;
+            box-shadow: 0 8px 25px rgba(255, 23, 68, 0.5);
+            animation: ctaGlow 2s infinite;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 23, 68, 0.7);
+        }
+
+        @keyframes ctaGlow {
+            0%, 100% { box-shadow: 0 8px 25px rgba(255, 23, 68, 0.5); }
+            50% { box-shadow: 0 12px 35px rgba(255, 23, 68, 0.8); }
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 12px 35px rgba(255, 255, 255, 0.2);
+        }
+
+        .social-proof {
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: #ff6b35;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .guarantee {
+            background: linear-gradient(135deg, rgba(34, 193, 195, 0.1), rgba(253, 187, 45, 0.1));
+            border: 2px solid #22c1c3;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .guarantee h3 {
+            color: #22c1c3;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(255, 107, 53, 0.1), rgba(0, 212, 255, 0.1));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-elements::before {
+            top: 10%;
+            right: 10%;
+            animation-delay: -3s;
+        }
+
+        .floating-elements::after {
+            bottom: 10%;
+            left: 10%;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 1rem;
+            }
+            
+            .pain-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements"></div>
+    
+    <div class="hero">
+        <div class="container">
+            <div class="badge">🔥 EXCLUSIVE REVELATION</div>
+            
+            <h1 class="main-title">SUCCESSFUL<br>FUTURE TRADING</h1>
+            
+            <p class="subtitle">
+                Discover the Jealously Guarded Secrets of Millionaire Traders<br>
+                <strong>Transform $1,000 into $10,000 in Just 3 Months!</strong>
+            </p>
+
+            <div class="pain-points">
+                <h3>You're Tired of...</h3>
+                <div class="pain-list">
+                    <div class="pain-item">Losing money on random trades</div>
+                    <div class="pain-item">Following fake gurus who bankrupt you</div>
+                    <div class="pain-item">Trading without a clear proven strategy</div>
+                    <div class="pain-item">Watching your savings melt away</div>
+                </div>
+            </div>
+
+            <div class="solution">
+                <h3>🚀 HERE'S THE SOLUTION THAT WILL CHANGE EVERYTHING</h3>
+                <div class="benefits">
+                    <div class="benefit-card">
+                        <h4>Exclusive Strategies</h4>
+                        <p>The exact methods used by pro traders to generate 300% profits per year</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Risk Management</h4>
+                        <p>How to protect your capital and never lose more than 2% per trade</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Trading Psychology</h4>
+                        <p>Master your emotions and trade like a profit-making machine</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Technical Analysis</h4>
+                        <p>Read charts like an open book and anticipate every movement</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-proof">
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p><em>"Thanks to this ebook, I multiplied my capital by 8 in 6 months. The strategies are revolutionary!"</em></p>
+                    <strong>- Mark D., Independent Trader</strong>
+                </div>
+            </div>
+
+            <div class="guarantee">
+                <h3>🛡️ 30-DAY MONEY-BACK GUARANTEE</h3>
+                <p>If you're not completely satisfied, we'll refund you in full. No questions, no conditions.</p>
+            </div>
+
+            <div class="cta-section">
+                <div class="cta-content">
+                    <div class="urgency">
+                        ⚡ LIMITED OFFER - Only 24H left to take advantage of the launch price!
+                    </div>
+                    
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">
+                        DON'T MISS THIS OPPORTUNITY!
+                    </h2>
+                    
+                    <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">
+                        Join the 10,000+ traders who have already transformed their financial lives
+                    </p>
+
+                    <div class="cta-buttons">
+                        <a href="https://zekiplaystation.ci/shop/In-depth_trading" class="btn btn-secondary">
+                            📖 LEARN MORE
+                        </a>
+                        
+                        <a href="https://zekiplaystation.ci/shop/In-depth_trading" class="btn btn-primary">
+                            🚀 BUY NOW - $11,71 instead of $29,99
+                        </a>
+                    </div>
+
+                    <p style="margin-top: 1.5rem; font-size: 1.1rem; color: #ff6b35; font-weight: bold; text-align: center;">
+                        ⚠️ Still hesitating? Every day you wait is money lost on the markets!
+                    </p>
+
+                    <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+                        100% secure payment • Instant access • 24/7 support
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer style="background: rgba(0, 0, 0, 0.9); padding: 3rem 2rem 1rem; margin-top: 4rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            
+            <!-- Legal Links -->
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <a href="#terms" onclick="toggleSection('terms')" style="color: #00d4ff; text-decoration: none; font-size: 0.9rem; cursor: pointer; transition: color 0.3s;">Terms & Conditions</a>
+                <a href="#privacy" onclick="toggleSection('privacy')" style="color: #00d4ff; text-decoration: none; font-size: 0.9rem; cursor: pointer; transition: color 0.3s;">Privacy Policy</a>
+                <a href="#disclaimer" onclick="toggleSection('disclaimer')" style="color: #00d4ff; text-decoration: none; font-size: 0.9rem; cursor: pointer; transition: color 0.3s;">Risk Disclaimer</a>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div id="terms" style="display: none; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="color: #ff6b35; margin-bottom: 1rem; font-size: 1.3rem;">📋 Terms & Conditions</h3>
+                <div style="font-size: 0.9rem; line-height: 1.6; opacity: 0.9;">
+                    <p><strong>1. Product Description:</strong> "Successful Future Trading" is a digital educational ebook designed to provide trading strategies and market insights. Results may vary based on individual application and market conditions.</p>
+                    <p><strong>2. Refund Policy:</strong> We offer a 30-day money-back guarantee from the date of purchase. To request a refund, contact our support team with your order details.</p>
+                    <p><strong>3. License:</strong> This ebook is for personal use only. Redistribution, resale, or sharing of the content is strictly prohibited and may result in legal action.</p>
+                    <p><strong>4. Limitation of Liability:</strong> The author and publisher are not responsible for any financial losses incurred from following the strategies outlined in this ebook.</p>
+                    <p><strong>5. Updates:</strong> We reserve the right to update these terms at any time. Continued use of our services constitutes acceptance of any changes.</p>
+                </div>
+            </div>
+
+            <!-- Privacy Policy -->
+            <div id="privacy" style="display: none; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="color: #00d4ff; margin-bottom: 1rem; font-size: 1.3rem;">🔒 Privacy Policy</h3>
+                <div style="font-size: 0.9rem; line-height: 1.6; opacity: 0.9;">
+                    <p><strong>Data Collection:</strong> We collect only essential information necessary to process your purchase and deliver the ebook. This includes your email address and payment information.</p>
+                    <p><strong>Data Usage:</strong> Your information is used solely for order processing, customer support, and occasional updates about our products. We never sell or share your data with third parties.</p>
+                    <p><strong>Data Security:</strong> All transactions are processed through secure, encrypted connections. Your payment information is handled by certified payment processors and never stored on our servers.</p>
+                    <p><strong>Email Communications:</strong> By purchasing, you consent to receive order confirmations and important updates. You can unsubscribe from promotional emails at any time.</p>
+                    <p><strong>Cookies:</strong> Our website uses essential cookies to ensure proper functionality. No tracking cookies are used for advertising purposes.</p>
+                    </div>
+            </div>
+
+            <!-- Risk Disclaimer -->
+            <div id="disclaimer" style="display: none; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="color: #ff1744; margin-bottom: 1rem; font-size: 1.3rem;">⚠️ Risk Disclaimer</h3>
+                <div style="font-size: 0.9rem; line-height: 1.6; opacity: 0.9;">
+                    <p><strong>Trading Risk:</strong> Futures trading involves substantial risk of loss and is not suitable for all investors. Past performance is not indicative of future results.</p>
+                    <p><strong>Educational Purpose:</strong> This ebook is for educational purposes only and should not be considered as personalized financial advice. Always consult with a qualified financial advisor.</p>
+                    <p><strong>No Guarantee:</strong> While the strategies presented have been successful for some traders, we cannot guarantee profits or prevent losses. Trading success depends on many factors including market conditions, discipline, and risk management.</p>
+                    <p><strong>Capital Risk:</strong> Only trade with money you can afford to lose. Never risk more than you can afford to lose, and always implement proper risk management strategies.</p>
+                    <p><strong>Regulatory Notice:</strong> Ensure that futures trading is legal in your jurisdiction before engaging in any trading activities.</p>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <p style="font-size: 0.9rem; opacity: 0.7; margin-bottom: 0.5rem;">
+                    © 2024 <strong style="color: #ff6b35;">zekiplaystation</strong>. All rights reserved.
+                </p>
+                <p style="font-size: 0.8rem; opacity: 0.5;">
+                    "Successful Future Trading" is a trademark of zekiplaystation. Unauthorized reproduction or distribution is prohibited.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle sections function
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const allSections = ['terms', 'privacy', 'disclaimer'];
+            
+            // Close all other sections
+            allSections.forEach(id => {
+                if (id !== sectionId) {
+                    document.getElementById(id).style.display = 'none';
+                }
+            });
+            
+            // Toggle current section
+            if (section.style.display === 'none' || section.style.display === '') {
+                section.style.display = 'block';
+                section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                section.style.display = 'none';
+            }
+        }
+
+        // Animation d'apparition au scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.benefit-card, .pain-item, .testimonial');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Style initial pour l'animation
+        document.querySelectorAll('.benefit-card, .pain-item, .testimonial').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll();
+
+        // Effet de particules flottantes
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = Math.random() * 4 + 2 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.background = `rgba(${Math.random() > 0.5 ? '255, 107, 53' : '0, 212, 255'}, 0.6)`;
+            particle.style.borderRadius = '50%';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = '100vh';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '1';
+            
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                { transform: `translateY(-100vh) rotate(360deg)`, opacity: 0 }
+            ], {
+                duration: Math.random() * 3000 + 2000,
+                easing: 'linear'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        }
+
+        // Créer des particules périodiquement
+        setInterval(createParticle, 300);
+    </script>
+</body>
+</html>
+  
